@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <!-- Mars Data-->
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Latest Mars News</h3>
+        <h4>{{mars.news_title}}</h4>
+        <small>{{mars.news_text}}</small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <h3>Featured Mars Image</h3>
+        <img src={{mars.featured_image}} class="img-fluid" width: 100%>
+      </div>
+      <div class="col-md-4">
+        <h4>Mars Facts</h4>
+        {{ mars.table_data |safe }}
+      </div>
+    </div>
+
+    <div class=row>
+      <div class="col-md-12">
+        <h3 class = "text-center">Mars Hemispheres</h3>
+      </div>
+    </div>
+
+    <div class=row  align-items-center>
+      <div class="col-md-6">
+        <img src={{mars.url1}} width: 50px>
+        <figcaption class="figure-caption">{{mars.title1}}</figcaption>
+        
+      </div>
+      <div class="col-md-6">
+        <img src={{mars.url2}} width: 50px>
+        <figcaption class="figure-caption">{{mars.title2}}</figcaption>
+        
+      </div>
+    </div>
+
+    <div class=row  align-items-center>
+      <div class="col-md-6">
+        <img src={{mars.url3}} class="figure-img img-fluid picture" width: 50px>
+        <figcaption class="figure-caption">{{mars.title3}}</figcaption>
+        
+      </div>
+      <div class="col-md-6">
+        <img src={{mars.url4}} class="figure-img img-fluid picture" width: 50px>
+        <figcaption class="figure-caption">{{mars.title4}}</figcaption>
+        
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
