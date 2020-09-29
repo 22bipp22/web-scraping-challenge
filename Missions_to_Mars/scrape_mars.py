@@ -19,31 +19,32 @@ def scrape():
     
 
     #Iterate through x number of pages:
-    for x in range(1):  #--- Don't need this, just getting first occurence
+    for x in range(4):  #--- Don't need this, just getting first occurence
         
         html=browser.html
     
         soup=bs(html, 'html.parser')
     
-        articles = soup.find_all('li', class_='slide')
-        print(articles)
-    
-    #Iterate through each news article
-        for article in articles:
+        articles = soup.find('div', class_='grid_layout')
+        article = articles.find('li', class_='slide')
+            
+    #Check if it found an article, if not try again???
+        if article:
             
             news_title = article.find('div', class_='content_title').text
-            news_p = article.find('div', class_='article_teaser_body').text
-            if news_title: 
-                mars["news_title"] = news_title
-                mars["news_text"] = news_p
-                break
+            news_p = article.find('div', class_='article_teaser_body').text 
+            mars["news_title"] = news_title
+            mars["news_text"] = news_p
+            break
 
         # Click the 'More' button on each page
-        try:
-            browser.click_link_by_partial_text('More')
+        else: 
+            try:
+                print("next page------------------------------------")
+                browser.click.links.find_by_partial_text('More')
             
-        except:
-            print("Scraping Complete")
+            except:
+                print("Scraping Complete")
             
     
 

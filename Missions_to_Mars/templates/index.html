@@ -7,7 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mission to Mars</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../style.css">
+  <style>
+    /*
+    Getting 404 error when referencing style.css, so doing css internally 
+    */
+    .picture {
+      width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 
 <body>
@@ -29,7 +37,7 @@
     <div class="row">
       <div class="col-md-8">
         <h3>Featured Mars Image</h3>
-        <img src={{mars.featured_image}} class="img-fluid" width: 100%>
+        <img src={{mars.featured_image}} class="picture" alt="Featured Image">
       </div>
       <div class="col-md-4">
         <h4>Mars Facts</h4>
@@ -43,27 +51,27 @@
       </div>
     </div>
 
-    <div class=row  align-items-center>
+    <div class=row>
       <div class="col-md-6">
-        <img src={{mars.url1}} width: 50px>
+        <img src={{mars.url1}} class="picture" alt="Mars Hemisphere Image">
         <figcaption class="figure-caption">{{mars.title1}}</figcaption>
         
       </div>
       <div class="col-md-6">
-        <img src={{mars.url2}} width: 50px>
+        <img src={{mars.url2}} class="picture" alt="Mars Hemisphere Image">
         <figcaption class="figure-caption">{{mars.title2}}</figcaption>
         
       </div>
     </div>
 
-    <div class=row  align-items-center>
+    <div class=row>
       <div class="col-md-6">
-        <img src={{mars.url3}} class="figure-img img-fluid picture" width: 50px>
+        <img src={{mars.url3}} class="picture" alt="Mars Hemisphere Image">
         <figcaption class="figure-caption">{{mars.title3}}</figcaption>
         
       </div>
       <div class="col-md-6">
-        <img src={{mars.url4}} class="figure-img img-fluid picture" width: 50px>
+        <img src={{mars.url4}} class="picture" alt="Mars Hemisphere Image">
         <figcaption class="figure-caption">{{mars.title4}}</figcaption>
         
       </div>
